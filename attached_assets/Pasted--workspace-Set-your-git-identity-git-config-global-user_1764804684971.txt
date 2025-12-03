@@ -1,0 +1,52 @@
+~/workspace$ # Set your git identity
+git config --global user.email "nate@trashjoes.com"
+git config --global user.name "nswilliams99"
+
+# Then proceed with the push
+git add .
+git commit -m "Initial commit - Dumpster Diverz Next.js website"
+git remote add origin https://github.com/nswilliams99/DumpsterDiverz-Next.js.git
+git branch -M main
+git push -u origin main
+On branch main
+nothing to commit, working tree clean
+To https://github.com/nswilliams99/DumpsterDiverz-Next.js.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/nswilliams99/DumpsterDiverz-Next.js.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+~/workspace$ git push -u origin main --force
+Enumerating objects: 659, done.
+Counting objects: 100% (659/659), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (624/624), done.
+Writing objects: 100% (659/659), 133.81 MiB | 5.03 MiB/s, done.
+Total 659 (delta 270), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (270/270), done.
+remote: warning: See https://gh.io/lfs for more information.
+remote: warning: File zipFile.zip is 66.59 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/nswilliams99/DumpsterDiverz-Next.js.git
+ + fd2b039...e3f11be main -> main (forced update)
+branch 'main' set up to track 'origin/main'.
+~/workspace$ # Remove the zip file from the repo
+git rm zipFile.zip
+git commit -m "Remove large zip file"
+git push
+rm 'zipFile.zip'
+[main 3aa1b99] Remove large zip file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 zipFile.zip
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 230 bytes | 230.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/nswilliams99/DumpsterDiverz-Next.js.git
+   e3f11be..3aa1b99  main -> main
+~/workspace$ 

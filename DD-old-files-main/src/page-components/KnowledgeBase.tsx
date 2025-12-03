@@ -160,15 +160,15 @@ const KnowledgeBase = () => {
                           <div className="flex-1">
                             <CardTitle className="text-xl mb-2">
                               <Link 
-                                to={`/help/${article.slug}`}
+                                href={`/help/${(article as any).slug}`}
                                 className="text-industrial-dark hover:text-diverz-purple transition-colors"
                               >
-                                {article.title}
+                                {(article as any).title}
                               </Link>
                             </CardTitle>
-                            {article.excerpt && (
+                            {(article as any).excerpt && (
                               <CardDescription className="text-base">
-                                {article.excerpt}
+                                {(article as any).excerpt}
                               </CardDescription>
                             )}
                           </div>
@@ -185,7 +185,7 @@ const KnowledgeBase = () => {
                               {article.kb_categories.name}
                             </Badge>
                           )}
-                          <span>{article.view_count || 0} views</span>
+                          <span>{(article as any).view_count || 0} views</span>
                           {'helpful_count' in article && article.helpful_count !== undefined && (
                             <span>{article.helpful_count} helpful votes</span>
                           )}

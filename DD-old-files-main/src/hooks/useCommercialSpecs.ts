@@ -10,7 +10,7 @@ export interface CommercialSpec {
   capacity: string;
   ideal_use: string;
   is_active: boolean;
-  sort_order: number;
+  sort_order: number | null;
 }
 
 export const useCommercialSpecs = () => {

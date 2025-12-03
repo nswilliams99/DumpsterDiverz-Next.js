@@ -126,7 +126,7 @@ const EagleLakeSignupForm = () => {
       const quantity = data.quantity ? parseInt(data.quantity, 10) : null;
       const totalPrice = cartPrice && quantity ? cartPrice * quantity : null;
 
-      const { error } = await (supabase.from('hoa_signups') as any).insert({
+      const { error } = await (supabase as any).from('hoa_signups').insert({
         full_name: data.full_name,
         address: data.address,
         cell_phone: data.cell_phone,

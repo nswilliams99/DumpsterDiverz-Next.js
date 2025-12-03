@@ -70,7 +70,7 @@ const ResidentialTownPage = ({ slug }: ResidentialTownPageProps) => {
   
   // Generate enhanced schemas using SchemaFactory
   const enhancedSchemas = generateSchemas({
-    town,
+    town: town as any,
     faqs: faqs?.map(faq => ({ question: faq.question, answer: faq.answer })),
     pageType: 'residential',
     canonicalUrl
@@ -131,7 +131,7 @@ const ResidentialTownPage = ({ slug }: ResidentialTownPageProps) => {
         />
 
         {/* SEO Section */}
-        <TownSEOSection town={town} />
+        <TownSEOSection town={town as any} />
 
         {/* Service Introduction */}
         <ServiceIntroduction section={serviceIntroSection} />

@@ -460,7 +460,7 @@ const EnhancedSearchModal = ({ isOpen, onClose }: EnhancedSearchModalProps) => {
                   <div key={category} className="space-y-2">
                     {Object.keys(groupedResults).length > 1 && (
                       <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide px-1">
-                        {contentTypeLabels[category] || category}
+                        {(contentTypeLabels as Record<string, string>)[category] || category}
                       </h4>
                     )}
                     {categoryResults.map((result: EnhancedSearchResult, index) => {

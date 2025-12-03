@@ -311,7 +311,7 @@ export const useEnhancedSearch = () => {
           limit: 5
         });
 
-        semanticResults = semanticData?.results?.map(result => ({
+        semanticResults = semanticData?.results?.map((result: any) => ({
           id: result.id,
           title: result.title || 'Semantic Result',
           content: result.content,

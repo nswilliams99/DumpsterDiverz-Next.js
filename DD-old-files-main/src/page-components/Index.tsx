@@ -116,7 +116,7 @@ const Index = () => {
       />
       
       <SEOOptimizer
-        title="Trash service that doesn't suck | Dumpster Diverz"
+        title="Residential Trash Service that Shows Up! | Dumpster Diverz"
         description="Family-owned trash service in Northern Colorado since 2008. Weekly pickup from $29, no contracts. Residential & commercial dumpster rentals. Call today!"
         canonical="https://www.dumpsterdiverz.com/"
         pageType="service"

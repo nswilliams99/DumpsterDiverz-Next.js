@@ -1,5 +1,5 @@
-import dynamic from "next/dynamic";
 import type { Metadata } from 'next';
+import EagleLakePage from "@/page-components/hoa/EagleLakeAssociation";
 
 export const metadata: Metadata = {
   title: 'Eagle Lake Association HOA - Trash & Waste Services',
@@ -31,8 +31,6 @@ export const metadata: Metadata = {
     images: ['/images/og/home.webp'],
   },
 };
-
-const EagleLakePage = dynamic(() => import("@/page-components/hoa/EagleLakeAssociation"));
 
 export default function EagleLakeAssociation() {
   return <EagleLakePage />;

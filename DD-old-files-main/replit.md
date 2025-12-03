@@ -6,6 +6,14 @@ Dumpster Diverz is a Next.js 15 application providing professional waste managem
 
 ## Recent Changes
 
+**December 3, 2025 - Residential Town Page Hydration Fix**
+- Fixed critical hydration mismatch causing residential town pages to show loading spinner instead of content
+- Changed React Query hooks from `placeholderData` to `initialData` in useResidentialTowns.ts
+- Fixed SEO.tsx component to use React state with useEffect for client-side values (canonical URL, commercial page detection)
+- All 6 residential town pages now load correctly: Windsor, Fort Collins, Wellington, Greeley, North County, Severance
+- Static data fallback pattern preserved for reliable rendering when Supabase is unavailable
+- Added 127.0.0.1 and localhost to allowedDevOrigins for local development
+
 **November 24, 2025 - Routing Architecture Fix & Homepage Static Import Solution**
 - Resolved critical Next.js routing conflict where both Pages Router (src/pages/) and App Router (src/app/) existed simultaneously
 - Pages Router was taking priority, causing all App Router edits to be ignored on live site

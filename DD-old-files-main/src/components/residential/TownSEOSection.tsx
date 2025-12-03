@@ -28,12 +28,9 @@ const TownSEOSection = ({ town, customTitle, customContent }: TownSEOSectionProp
   const sectionId = `${town.slug}-intro`;
   const fallbackText = `Dumpster Diverz provides weekly trash pickup in ${town.name}, Colorado with reliable service, online billing, and no contracts.`;
   
-  // Use specific images for Windsor and Fort Collins, otherwise use hero image
-  const imageSrc = town.slug === 'windsor' 
-    ? '/lovable-uploads/4dbeaca8-8312-4455-a6b0-30c7d06c3e16.png'
-    : town.slug === 'fort-collins'
-    ? '/lovable-uploads/4d8e5dc1-8e69-44fd-ae11-604a056173da.png'
-    : town.hero_image_url?.trim() || '/lovable-uploads/4a0801f5-adb6-4586-aac5-552831ee7ebd.png';
+  // Use residential hero image as fallback for all towns
+  const defaultHeroUrl = 'https://cgizicrrzdbzvfniffhw.supabase.co/storage/v1/object/public/website_pics/pages/residential/resi_heroimg.webp';
+  const imageSrc = town.hero_image_url?.trim() || defaultHeroUrl;
   const altText = town.slug === 'windsor'
     ? 'Dumpster Diverz employee providing residential trash service with truck in Windsor neighborhood'
     : town.slug === 'fort-collins'

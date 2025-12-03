@@ -25,6 +25,7 @@ import ErrorFallback from '@/components/ErrorFallback';
 import { useResidentialStructuredData } from './ResidentialStructuredData';
 import { useResidentialTownBySlug } from '@/hooks/useResidentialTowns';
 import { useResidentialFaqsByTown } from '@/hooks/useResidentialFaqs';
+import { getResidentialTownBySlug } from '@/data/residentialTownsData';
 import { generateSchemas } from '@/components/seo/SchemaFactory';
 import { usePageSection } from '@/hooks/usePageSections';
 
@@ -33,24 +34,18 @@ interface ResidentialTownPageProps {
 }
 
 const ResidentialTownPage = ({ slug }: ResidentialTownPageProps) => {
-  const { data: town, isLoading: townLoading, error: townError } = useResidentialTownBySlug(slug);
+  const { data: dbTown, isLoading: townLoading, error: townError } = useResidentialTownBySlug(slug);
   const { data: faqs, isLoading: faqsLoading } = useResidentialFaqsByTown(slug);
   
   // Load page sections for dynamic content
   const { section: serviceIntroSection } = usePageSection(`residential-${slug}`, 'service-introduction');
   const { section: bottomCTASection } = usePageSection(`residential-${slug}`, 'bottom-cta');
 
-  if (townLoading && !town) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary" role="status" aria-label="Loading page content">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    );
-  }
+  // Use static data as fallback - ensures immediate rendering
+  const staticTown = getResidentialTownBySlug(slug);
+  const town = dbTown || staticTown;
 
-  if (townError || !town) {
+  if (!town) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">

@@ -64,7 +64,7 @@ const WeeklyPickupSectionSeverance = () => {
               className="w-full rounded-lg shadow-lg" 
               src={section?.image_path 
                 ? `https://cgizicrrzdbzvfniffhw.supabase.co/storage/v1/object/public/${encodeURI(section.image_path)}`
-                : "/lovable-uploads/a4ca2c4a-299f-4b21-8f94-29df9f256d85.jpg"
+                : "https://cgizicrrzdbzvfniffhw.supabase.co/storage/v1/object/public/website_pics/pages/residential/resi_heroimg.webp"
               }
               sizes="(max-width: 768px) 100vw, 50vw"
             />

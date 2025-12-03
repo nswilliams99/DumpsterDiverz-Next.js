@@ -63,6 +63,11 @@ const SEO = ({
       return normalizedCanonical.replace(/\/$/, '');
     }
     
+    // On server-side, return default canonical since window is not available
+    if (typeof window === 'undefined') {
+      return 'https://www.dumpsterdiverz.com';
+    }
+    
     // Generate canonical from current location, stripping UTM parameters and trailing slashes
     const url = new URL(window.location.href);
     // Remove UTM and other tracking parameters
@@ -76,6 +81,9 @@ const SEO = ({
   };
   
   const finalCanonical = getCanonicalUrl();
+  
+  // Check if on commercial page (only on client-side)
+  const isCommercialPage = typeof window !== 'undefined' && window.location.pathname.includes('/commercial/');
 
   return (
     <>
@@ -88,7 +96,7 @@ const SEO = ({
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         
         {/* LCP Image Preload for Commercial Pages */}
-        {window.location.pathname.includes('/commercial/') && (
+        {isCommercialPage && (
           <>
             <link 
               rel="preconnect" 

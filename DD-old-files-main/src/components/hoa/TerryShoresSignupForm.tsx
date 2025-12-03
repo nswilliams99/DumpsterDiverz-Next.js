@@ -360,21 +360,21 @@ const TerryShoresSignupForm = () => {
               <Label className="text-professional-dark font-semibold">
                 Seasonal Lawn Pickup (Optional)
               </Label>
-              <div 
+              <label 
+                htmlFor="lawn_pickup_checkbox"
                 className={`flex items-center space-x-3 p-4 border-2 rounded-lg transition-all cursor-pointer ${
                   selectedLawnPickup 
                     ? 'border-primary-pink bg-primary-pink/5' 
                     : 'border-gray-200 hover:bg-gray-50 hover:border-primary-pink'
                 }`}
-                onClick={() => setValue('lawn_pickup', !selectedLawnPickup)}
               >
                 <Checkbox 
-                  id="lawn_pickup"
+                  id="lawn_pickup_checkbox"
                   checked={selectedLawnPickup || false}
                   onCheckedChange={(checked) => setValue('lawn_pickup', checked as boolean)}
                   className="data-[state=checked]:bg-primary-pink data-[state=checked]:border-primary-pink"
                 />
-                <Label htmlFor="lawn_pickup" className="flex-1 cursor-pointer font-inter">
+                <div className="flex-1 font-inter">
                   <div className="flex justify-between items-start">
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center mr-3">
@@ -391,8 +391,8 @@ const TerryShoresSignupForm = () => {
                       <p className="text-xs text-gray-500">per month</p>
                     </div>
                   </div>
-                </Label>
-              </div>
+                </div>
+              </label>
               <p className="text-xs text-gray-500">
                 Add weekly lawn clipping collection during the growing season
               </p>

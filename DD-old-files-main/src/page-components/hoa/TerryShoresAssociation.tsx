@@ -162,11 +162,11 @@ const TerryShoresAssociation = () => {
                   </div>
 
                   {/* Pricing Callout */}
-                  <div className="bg-gradient-to-r from-diverz-pink to-diverz-purple rounded-xl p-4 mb-6 text-white text-center">
-                    <div className="text-3xl font-bold font-poppins">
-                      <span className="text-white font-extrabold">$20</span><span className="text-lg font-semibold text-white/90">/month</span>
+                  <div className="bg-gray-50 border-2 border-diverz-pink/20 rounded-xl p-4 mb-6 text-center">
+                    <div className="text-3xl font-poppins">
+                      <span className="text-gray-900 font-bold">$20</span><span className="text-lg font-medium text-gray-600">/month</span>
                     </div>
-                    <p className="text-white/90 font-inter text-sm font-medium">
+                    <p className="text-gray-600 font-inter text-sm font-medium">
                       May 1st - November 1st
                     </p>
                   </div>

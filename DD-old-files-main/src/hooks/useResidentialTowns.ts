@@ -25,10 +25,16 @@ export const useResidentialTowns = () => {
       }
       return staticResidentialTowns as unknown as ResidentialTown[];
     },
+    retry: 0,
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
+    placeholderData: staticResidentialTowns as unknown as ResidentialTown[],
   });
 };
 
 export const useResidentialTownBySlug = (slug: string) => {
+  const staticTown = getStaticTown(slug);
+  
   return useQuery({
     queryKey: ['residential-town', slug],
     queryFn: async () => {
@@ -45,9 +51,13 @@ export const useResidentialTownBySlug = (slug: string) => {
       } catch (e) {
         console.log('Using static residential town data for:', slug);
       }
-      return getStaticTown(slug) as unknown as ResidentialTown | null;
+      return staticTown as unknown as ResidentialTown | null;
     },
     enabled: !!slug,
+    retry: 0,
+    staleTime: 5 * 60 * 1000,
+    gcTime: 10 * 60 * 1000,
+    placeholderData: staticTown as unknown as ResidentialTown | null,
   });
 };
 

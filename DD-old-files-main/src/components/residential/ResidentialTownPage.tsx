@@ -40,7 +40,7 @@ const ResidentialTownPage = ({ slug }: ResidentialTownPageProps) => {
   const { section: serviceIntroSection } = usePageSection(`residential-${slug}`, 'service-introduction');
   const { section: bottomCTASection } = usePageSection(`residential-${slug}`, 'bottom-cta');
 
-  if (townLoading) {
+  if (townLoading && !town) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary" role="status" aria-label="Loading page content">

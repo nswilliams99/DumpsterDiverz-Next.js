@@ -1,3 +1,4 @@
+'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,6 +10,11 @@ import OptimizedImage from '@/components/ui/OptimizedImage';
 interface DumpsterSizesProps {
   townName?: string;
 }
+
+const getSizePageUrl = (sizeLabel: string): string => {
+  const slug = sizeLabel.toLowerCase().replace(' ', '-');
+  return `/rolloff-${slug}`;
+};
 
 const DumpsterSizes = ({ townName }: DumpsterSizesProps) => {
   const { data: sizes, isLoading, error } = useRolloffSizes();
@@ -50,14 +56,23 @@ const DumpsterSizes = ({ townName }: DumpsterSizesProps) => {
                     height={200}
                     sizes="(max-width: 768px) 100vw, 25vw"
                   />
-                  <div className="absolute top-4 left-4 bg-diverz-purple text-white px-3 py-1 rounded-full font-semibold border-2 border-professional-lighter">
+                  <Link 
+                    href={getSizePageUrl(size.size_label)}
+                    className="absolute top-4 left-4 bg-diverz-pink hover:bg-diverz-pink-dark text-white px-3 py-1 rounded-full font-semibold border-2 border-professional-lighter transition-colors duration-300"
+                    aria-label={`View ${size.size_label} dumpster details`}
+                  >
                     {size.size_label}
-                  </div>
+                  </Link>
                 </div>
                 
                 <CardHeader className="pb-3 bg-professional-lighter/50">
-                  <CardTitle className="text-xl font-bold text-professional-dark font-poppins">
-                    {size.size_label} Dumpster
+                  <CardTitle className="text-xl font-bold font-poppins">
+                    <Link 
+                      href={getSizePageUrl(size.size_label)}
+                      className="text-professional-dark hover:text-diverz-pink transition-colors duration-300"
+                    >
+                      {size.size_label} Dumpster
+                    </Link>
                   </CardTitle>
                 </CardHeader>
                 

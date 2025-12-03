@@ -11,7 +11,8 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
-import { CheckCircle, Loader2 } from 'lucide-react';
+import { Checkbox } from '@/components/ui/checkbox';
+import { CheckCircle, Loader2, Leaf } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 
@@ -25,6 +26,7 @@ const signupSchema = z.object({
   }),
   cart_size: z.enum(['96-gal', '64-gal']).optional(),
   quantity: z.string().optional(),
+  lawn_pickup: z.boolean().optional(),
   last_month_of_service: z.string().optional(),
   notes: z.string().optional(),
 }).superRefine((data, ctx) => {
@@ -105,8 +107,20 @@ const TerryShoresSignupForm = () => {
   const selectedServiceType = watch('service_type');
   const selectedQuantity = watch('quantity');
   const selectedLastMonth = watch('last_month_of_service');
+  const selectedLawnPickup = watch('lawn_pickup');
 
   const calculateTotal = () => {
+    if (selectedCartSize && selectedQuantity) {
+      const pricePerCart = cartPricing[selectedCartSize];
+      const qty = parseInt(selectedQuantity, 10);
+      const cartTotal = pricePerCart * qty;
+      const lawnPickupPrice = selectedLawnPickup ? 20 : 0;
+      return (cartTotal + lawnPickupPrice).toFixed(2);
+    }
+    return '0.00';
+  };
+
+  const calculateCartTotal = () => {
     if (selectedCartSize && selectedQuantity) {
       const pricePerCart = cartPricing[selectedCartSize];
       const qty = parseInt(selectedQuantity, 10);
@@ -123,6 +137,9 @@ const TerryShoresSignupForm = () => {
       const quantity = data.quantity ? parseInt(data.quantity, 10) : null;
       const totalPrice = cartPrice && quantity ? cartPrice * quantity : null;
 
+      const lawnPickupPrice = data.lawn_pickup ? 20 : 0;
+      const totalWithLawnPickup = totalPrice ? totalPrice + lawnPickupPrice : lawnPickupPrice || null;
+
       const { error } = await (supabase.from('hoa_signups') as any).insert({
         full_name: data.full_name,
         address: data.address,
@@ -132,7 +149,9 @@ const TerryShoresSignupForm = () => {
         cart_size: data.cart_size || null,
         cart_price: cartPrice,
         quantity: quantity,
-        total_monthly_price: totalPrice,
+        lawn_pickup: data.lawn_pickup || false,
+        lawn_pickup_price: data.lawn_pickup ? 20 : null,
+        total_monthly_price: totalWithLawnPickup,
         last_month_of_service: data.last_month_of_service || null,
         notes: data.notes || null,
         hoa_name: 'Terry Shores Association',
@@ -336,6 +355,50 @@ const TerryShoresSignupForm = () => {
             </div>
           )}
 
+          {selectedServiceType === 'start' && (
+            <div className="space-y-3">
+              <Label className="text-professional-dark font-semibold">
+                Seasonal Lawn Pickup (Optional)
+              </Label>
+              <div 
+                className={`flex items-center space-x-3 p-4 border-2 rounded-lg transition-all cursor-pointer ${
+                  selectedLawnPickup 
+                    ? 'border-primary-pink bg-primary-pink/5' 
+                    : 'border-gray-200 hover:bg-gray-50 hover:border-primary-pink'
+                }`}
+                onClick={() => setValue('lawn_pickup', !selectedLawnPickup)}
+              >
+                <Checkbox 
+                  id="lawn_pickup"
+                  checked={selectedLawnPickup || false}
+                  onCheckedChange={(checked) => setValue('lawn_pickup', checked as boolean)}
+                  className="data-[state=checked]:bg-primary-pink data-[state=checked]:border-primary-pink"
+                />
+                <Label htmlFor="lawn_pickup" className="flex-1 cursor-pointer font-inter">
+                  <div className="flex justify-between items-start">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center mr-3">
+                        <Leaf className="w-5 h-5 text-diverz-pink" />
+                      </div>
+                      <div>
+                        <span className="font-semibold text-lg">Seasonal Lawn Pickup</span>
+                        <p className="text-sm text-gray-600">Weekly grass clipping collection</p>
+                        <p className="text-xs text-gray-500 mt-1">May 1st - November 1st</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-2xl font-bold text-primary-pink">$20</span>
+                      <p className="text-xs text-gray-500">per month</p>
+                    </div>
+                  </div>
+                </Label>
+              </div>
+              <p className="text-xs text-gray-500">
+                Add weekly lawn clipping collection during the growing season
+              </p>
+            </div>
+          )}
+
           {(selectedServiceType === 'start' || selectedServiceType === 'end') && (
             <div className="space-y-2">
               <Label htmlFor="quantity" className="text-professional-dark font-semibold">
@@ -396,18 +459,28 @@ const TerryShoresSignupForm = () => {
                 <div>
                   <p className="text-sm text-gray-600 font-inter mb-1">Total Monthly Price</p>
                   <p className="text-xs text-gray-500 font-inter">
-                    {selectedQuantity} × {selectedCartSize} cart{parseInt(selectedQuantity) > 1 ? 's' : ''} @ ${cartPricing[selectedCartSize]}/month each
+                    {selectedQuantity} × {selectedCartSize} cart{parseInt(selectedQuantity) > 1 ? 's' : ''} @ ${cartPricing[selectedCartSize]}/month = ${calculateCartTotal()}
                   </p>
+                  {selectedLawnPickup && (
+                    <p className="text-xs text-gray-500 font-inter">
+                      + Seasonal Lawn Pickup @ $20/month
+                    </p>
+                  )}
                 </div>
                 <div className="text-right">
                   <p className="text-4xl font-bold text-primary-pink font-poppins">${calculateTotal()}</p>
                   <p className="text-sm text-gray-600 font-inter">per month</p>
                 </div>
               </div>
-              <div className="mt-3 pt-3 border-t border-gray-200">
+              <div className="mt-3 pt-3 border-t border-gray-200 space-y-1">
                 <p className="text-xs text-green-600 font-inter">
                   ✓ Includes bi-weekly recycling pickup
                 </p>
+                {selectedLawnPickup && (
+                  <p className="text-xs text-green-600 font-inter">
+                    ✓ Includes seasonal lawn pickup (May 1st - Nov 1st)
+                  </p>
+                )}
               </div>
             </div>
           )}

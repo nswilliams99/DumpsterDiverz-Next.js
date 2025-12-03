@@ -164,10 +164,10 @@ const TerryShoresAssociation = () => {
                   {/* Pricing Callout */}
                   <div className="bg-gradient-to-r from-diverz-pink to-diverz-purple rounded-xl p-4 mb-6 text-white text-center">
                     <div className="text-3xl font-bold font-poppins">
-                      $20<span className="text-lg font-normal">/month</span>
+                      <span className="text-white font-extrabold">$20</span><span className="text-lg font-semibold text-white/90">/month</span>
                     </div>
-                    <p className="text-white/90 font-inter text-sm">
-                      May through November
+                    <p className="text-white/90 font-inter text-sm font-medium">
+                      May 1st - November 1st
                     </p>
                   </div>
                   
@@ -215,25 +215,6 @@ const TerryShoresAssociation = () => {
                     </div>
                   </div>
 
-                  <Button
-                    asChild
-                    size="lg"
-                    className="w-full bg-diverz-pink hover:bg-diverz-pink-dark text-white font-semibold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-12"
-                  >
-                    <a 
-                      href="https://app.trashjoes.com/h/dumpster-diverz"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Order lawn pickup service online through TrashJoes"
-                    >
-                      <Leaf className="w-5 h-5 mr-2" />
-                      Add Lawn Pickup to Your Service
-                    </a>
-                  </Button>
-
-                  <p className="text-xs text-professional-dark/60 font-inter mt-3 text-center">
-                    Secure billing through TrashJoes integration
-                  </p>
                 </div>
               </div>
             </div>

@@ -2,7 +2,6 @@
 
 
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -203,12 +202,6 @@ export default function PayMyBillPage() {
         ogDescription="Pay your Dumpster Diverz bill online securely through TrashBilling.com. Find your Customer ID, update your info, or contact support."
         ogType="website"
       />
-
-      <Helmet>
-        <meta name="keywords" content="dumpster diverz bill pay, trash billing, pay trash bill online, customer ID, Northern Colorado waste billing" />
-        <meta name="geo.region" content="US-CO" />
-        <meta name="geo.placename" content="Northern Colorado" />
-      </Helmet>
 
       <BreadcrumbSchema items={breadcrumbItems} />
       <EnhancedFAQSchema faqs={billingFAQs} pageUrl="https://www.dumpsterdiverz.com/pay-my-bill" />

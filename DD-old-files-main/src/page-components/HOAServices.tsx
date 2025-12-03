@@ -262,13 +262,20 @@ const HOAServices = () => {
                 HOAs We Currently Service
               </h2>
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 className="bg-diverz-purple hover:bg-diverz-purple-dark text-white font-semibold font-inter shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-12 lg:h-14 px-8 py-3 text-base lg:text-lg"
                 asChild
               >
                 <a href="/hoa/eagle-lake-association">Eagle Lake Association HOA</a>
+              </Button>
+              <Button
+                size="lg"
+                className="bg-diverz-purple hover:bg-diverz-purple-dark text-white font-semibold font-inter shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-12 lg:h-14 px-8 py-3 text-base lg:text-lg"
+                asChild
+              >
+                <a href="/hoa/terry-shores-association">Terry Shores Association HOA</a>
               </Button>
             </div>
           </div>

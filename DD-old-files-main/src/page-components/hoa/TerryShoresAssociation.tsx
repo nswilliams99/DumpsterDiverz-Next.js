@@ -15,15 +15,18 @@ const TerryShoresAssociation = () => {
     <div className="min-h-screen">
       <SEO
         title="Terry Shores Association HOA - Trash & Waste Services | Dumpster Diverz"
-        description="Professional waste management services for Terry Shores Association HOA in Northern Colorado. Weekly trash pickup, bi-weekly recycling, seasonal grass pickup. Monday pickup - carts out the night before. Call 970-888-7274"
+        description="Professional waste management services for Terry Shores Association HOA in Northern Colorado. Weekly trash pickup, bi-weekly recycling, seasonal grass pickup. Friday pickup - carts out the night before. Call 970-888-7274"
         canonical={canonicalPageUrl}
       />
 
       <Header />
 
       <main>
-        {/* Hero Section - Enhanced with pink/magenta gradient */}
-        <section className="relative bg-gradient-to-r from-diverz-pink to-diverz-purple text-white py-16 md:py-24">
+        {/* Hero Section - Pink/Magenta Gradient */}
+        <section 
+          className="relative text-white py-16 md:py-24"
+          style={{ background: 'linear-gradient(135deg, hsl(340 82% 52%) 0%, hsl(320 75% 40%) 100%)' }}
+        >
           <div className="container mx-auto px-4 md:px-6 max-w-screen-xl">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-poppins">
@@ -31,14 +34,14 @@ const TerryShoresAssociation = () => {
               </h1>
               <p className="text-lg md:text-xl font-inter leading-relaxed mb-6">
                 Welcome, Terry Shores Residents! Dumpster Diverz is your dedicated waste management partner, 
-                providing reliable Monday pickup service with exclusive benefits for your community.
+                providing reliable Friday pickup service with exclusive benefits for your community.
               </p>
               
               {/* Key Benefits List */}
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <div className="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
                   <Calendar className="w-5 h-5 mr-2 text-white" />
-                  <span className="font-inter font-medium">Monday Pickup</span>
+                  <span className="font-inter font-medium">Friday Pickup</span>
                 </div>
                 <div className="flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
                   <Recycle className="w-5 h-5 mr-2 text-white" />
@@ -64,157 +67,115 @@ const TerryShoresAssociation = () => {
           </div>
         </section>
 
-        {/* Terry Shores Exclusive Services Section - Modeled after LawnPickupSection */}
-        <section className="py-16 bg-soft-neutral">
+        {/* Terry Shores Exclusive Services Section - Condensed */}
+        <section className="py-8 bg-soft-neutral">
           <div className="container mx-auto px-4 md:px-6 max-w-screen-xl">
             <div className="max-w-6xl mx-auto">
               {/* Section Header */}
-              <div className="text-center mb-12">
-                <h2 className="text-3xl lg:text-4xl font-bold text-professional-dark font-poppins mb-4">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl lg:text-3xl font-bold text-professional-dark font-poppins mb-2">
                   Terry Shores Exclusive Services
                 </h2>
-                <p className="text-xl text-professional-dark leading-relaxed font-inter max-w-3xl mx-auto">
-                  Special benefits available only to Terry Shores Association residents. 
-                  Experience premium waste management tailored to your community.
+                <p className="text-lg text-professional-dark leading-relaxed font-inter max-w-3xl mx-auto">
+                  Special benefits available only to Terry Shores Association residents.
                 </p>
               </div>
 
               {/* Two Column Layout */}
-              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+              <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                 
                 {/* Bi-Weekly Recycling Section */}
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-light-neutral">
-                  <div className="flex items-center mb-6">
-                    <div className="flex-shrink-0 w-14 h-14 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                      <Recycle className="w-7 h-7 text-diverz-pink" />
+                <div className="bg-white rounded-xl p-5 shadow-md border border-light-neutral">
+                  <div className="flex items-center mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-diverz-pink/20 rounded-full flex items-center justify-center">
+                      <Recycle className="w-6 h-6 text-diverz-pink" />
                     </div>
-                    <div className="ml-4">
-                      <h3 className="text-2xl font-bold text-professional-dark font-poppins">
+                    <div className="ml-3">
+                      <h3 className="text-xl font-bold text-professional-dark font-poppins">
                         Bi-Weekly Recycling
                       </h3>
-                      <div className="inline-flex items-center bg-diverz-pink/10 text-diverz-pink font-semibold px-3 py-1 rounded-full text-sm mt-1">
-                        <CheckCircle className="w-4 h-4 mr-1" />
-                        Included with All Service Plans
+                      <div className="inline-flex items-center bg-diverz-pink/10 text-diverz-pink font-semibold px-2 py-0.5 rounded-full text-xs">
+                        <CheckCircle className="w-3 h-3 mr-1" />
+                        Included Free
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-diverz-pink" />
-                      </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-5 h-5 text-diverz-pink flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                          No Extra Charge
-                        </h4>
-                        <p className="text-professional-dark font-inter">
-                          Recycling pickup every other week at no additional cost
-                        </p>
+                        <span className="font-medium text-professional-dark font-poppins">No Extra Charge</span>
+                        <span className="text-professional-dark font-inter text-sm"> - every other week</span>
                       </div>
                     </div>
-
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                        <Recycle className="w-5 h-5 text-diverz-pink" />
-                      </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-5 h-5 text-diverz-pink flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                          Single-Stream Recycling
-                        </h4>
-                        <p className="text-professional-dark font-inter">
-                          Easy recycling - no sorting required
-                        </p>
+                        <span className="font-medium text-professional-dark font-poppins">Single-Stream</span>
+                        <span className="text-professional-dark font-inter text-sm"> - no sorting required</span>
                       </div>
                     </div>
-
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                        <Trash2 className="w-5 h-5 text-diverz-pink" />
-                      </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-5 h-5 text-diverz-pink flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                          HOA-Compliant Cart
-                        </h4>
-                        <p className="text-professional-dark font-inter">
-                          Clean, uniform recycling cart for your home
-                        </p>
+                        <span className="font-medium text-professional-dark font-poppins">HOA-Compliant Cart</span>
+                        <span className="text-professional-dark font-inter text-sm"> - uniform design</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Seasonal Grass Pickup Section - Matching Bi-Weekly Recycling styling */}
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-light-neutral">
-                  <div className="flex items-center mb-6">
-                    <div className="flex-shrink-0 w-14 h-14 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                      <Leaf className="w-7 h-7 text-diverz-pink" />
+                {/* Seasonal Grass Pickup Section - Condensed */}
+                <div className="bg-white rounded-xl p-5 shadow-md border border-light-neutral">
+                  <div className="flex items-center mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-diverz-pink/20 rounded-full flex items-center justify-center">
+                      <Leaf className="w-6 h-6 text-diverz-pink" />
                     </div>
-                    <div className="ml-4">
-                      <h3 className="text-2xl font-bold text-professional-dark font-poppins">
+                    <div className="ml-3">
+                      <h3 className="text-xl font-bold text-professional-dark font-poppins">
                         Seasonal Grass Pickup
                       </h3>
-                      <div className="inline-flex items-center bg-diverz-pink/10 text-diverz-pink font-semibold px-3 py-1 rounded-full text-sm mt-1">
-                        <Leaf className="w-4 h-4 mr-1" />
-                        Optional Add-On Service
+                      <div className="inline-flex items-center bg-diverz-pink/10 text-diverz-pink font-semibold px-2 py-0.5 rounded-full text-xs">
+                        <Leaf className="w-3 h-3 mr-1" />
+                        Optional Add-On
                       </div>
                     </div>
                   </div>
 
                   {/* Pricing Callout */}
-                  <div className="bg-gray-50 border-2 border-diverz-pink/20 rounded-xl p-4 mb-6 text-center">
-                    <div className="text-3xl font-poppins">
-                      <span className="text-gray-900 font-bold">$20</span><span className="text-lg font-medium text-gray-600">/month</span>
+                  <div className="bg-gray-50 border-2 border-diverz-pink/20 rounded-lg p-3 mb-4 text-center">
+                    <div className="text-2xl font-poppins">
+                      <span className="text-gray-900 font-bold">$20</span><span className="text-base font-medium text-gray-600">/month</span>
                     </div>
-                    <p className="text-gray-600 font-inter text-sm font-medium">
+                    <p className="text-gray-600 font-inter text-xs font-medium">
                       May 1st - November 1st
                     </p>
                   </div>
                   
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                        <Trash2 className="w-5 h-5 text-diverz-pink" />
-                      </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-5 h-5 text-diverz-pink flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                          Dedicated 64-Gallon Can
-                        </h4>
-                        <p className="text-professional-dark font-inter">
-                          One dedicated can for lawn clippings and grass
-                        </p>
+                        <span className="font-medium text-professional-dark font-poppins">64-Gallon Can</span>
+                        <span className="text-professional-dark font-inter text-sm"> - dedicated for grass</span>
                       </div>
                     </div>
-
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                        <Calendar className="w-5 h-5 text-diverz-pink" />
-                      </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-5 h-5 text-diverz-pink flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                          Weekly Pickup
-                        </h4>
-                        <p className="text-professional-dark font-inter">
-                          Weekly collection during growing season
-                        </p>
+                        <span className="font-medium text-professional-dark font-poppins">Weekly Pickup</span>
+                        <span className="text-professional-dark font-inter text-sm"> - during growing season</span>
                       </div>
                     </div>
-
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                        <DollarSign className="w-5 h-5 text-diverz-pink" />
-                      </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-5 h-5 text-diverz-pink flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                          Simple Monthly Billing
-                        </h4>
-                        <p className="text-professional-dark font-inter">
-                          Easy billing through TrashJoes - no contracts
-                        </p>
+                        <span className="font-medium text-professional-dark font-poppins">Simple Billing</span>
+                        <span className="text-professional-dark font-inter text-sm"> - no contracts</span>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -232,10 +193,10 @@ const TerryShoresAssociation = () => {
                 </h3>
               </div>
               <p className="text-lg md:text-xl font-semibold text-gray-200 font-inter mb-2">
-                Monday Pickup Schedule
+                Friday Pickup Schedule
               </p>
               <p className="text-base md:text-lg text-gray-200 font-inter">
-                Please place both trash and recycling carts out <span className="font-bold text-diverz-pink">the night before</span> for Monday morning pickup
+                Please place both trash and recycling carts out <span className="font-bold text-diverz-pink">the night before</span> for Friday morning pickup
               </p>
             </div>
           </div>

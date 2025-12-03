@@ -1,0 +1,124 @@
+# Dumpster Diverz - Waste Management Services
+
+> Northern Colorado's premier waste management provider serving Windsor, Fort Collins, Wellington, Greeley, and surrounding communities
+
+## About Dumpster Diverz
+
+Dumpster Diverz is a locally-owned waste management company providing eco-friendly trash services to residential, commercial, and HOA customers throughout Northern Colorado. We specialize in weekly trash pickup, recycling services, commercial dumpsters, and roll-off container rentals.
+
+**Contact Information:**
+- Phone: 970-888-7274
+- Email: dumpsterdiverz@gmail.com
+- Website: https://www.dumpsterdiverz.com
+
+**Service Area:**
+Windsor, Fort Collins, Wellington, Greeley, Severance, Loveland, Longmont, Berthoud, and Northern Colorado communities
+
+## Services Overview
+
+### Residential Trash Services
+- Weekly curbside trash pickup
+- Recycling services (single-stream)
+- 96-gallon and 64-gallon cart options
+- Eco-friendly waste management
+- Local, responsive customer support
+
+**Residential Service Areas:**
+- Fort Collins: https://www.dumpsterdiverz.com/residential/fort-collins
+- Greeley: https://www.dumpsterdiverz.com/residential/greeley
+- Windsor: https://www.dumpsterdiverz.com/residential/windsor
+- Wellington: https://www.dumpsterdiverz.com/residential/wellington
+- Severance: https://www.dumpsterdiverz.com/residential/severance
+- North County: https://www.dumpsterdiverz.com/residential/north-county
+
+### Commercial Dumpster Services
+- Permanent commercial dumpsters for businesses
+- 2-yard and 3-yard container sizes
+- Flexible pickup schedules
+- Reliable service for restaurants, offices, retail stores
+- Transparent pricing with no hidden fees
+
+**Commercial Options:**
+- 2-Yard Dumpster: https://www.dumpsterdiverz.com/commercial/2-yard
+- 3-Yard Dumpster: https://www.dumpsterdiverz.com/commercial/3-yard
+
+### Roll-Off Dumpster Rentals
+- Temporary dumpsters for construction, renovation, cleanouts
+- 12-yard, 15-yard, 20-yard, and 30-yard sizes
+- Up to 2-week rental periods
+- Weight allowances included (2-4 tons depending on size)
+- $95/ton for additional weight
+
+**Roll-Off Sizes:**
+- 12-Yard: https://www.dumpsterdiverz.com/rolloff-12-yard (2 tons included)
+- 15-Yard: https://www.dumpsterdiverz.com/rolloff-15-yard (2.5 tons included)
+- 20-Yard: https://www.dumpsterdiverz.com/rolloff-20-yard (3 tons included)
+- 30-Yard: https://www.dumpsterdiverz.com/rolloff-30-yard (4 tons included)
+
+**Roll-Off Service Locations:**
+- Fort Collins, Greeley, Windsor, Wellington, Severance, Loveland, Longmont, Berthoud, and Northern Communities
+
+### HOA Services
+Specialized waste management solutions for homeowners associations with customized pricing, HOA-compliant bins, and community-focused service.
+
+**Featured HOA:**
+- Eagle Lake Association: https://www.dumpsterdiverz.com/hoa/eagle-lake-association
+  - Thursday pickup schedule (carts out the night before)
+  - 96-gal carts: $25.76/month
+  - 64-gal carts: $23.70/month
+  - Includes matching recycling cart
+  - Special roll-off pricing for residents:
+    * 12-yard: $325 (2 tons)
+    * 15-yard: $375 (2.5 tons)
+    * 20-yard: $450 (3 tons)
+    * 30-yard: $550 (4 tons)
+
+**HOA Resources:**
+- HOA Services Overview: https://www.dumpsterdiverz.com/hoa-services
+- HOA Quote Request: https://www.dumpsterdiverz.com/hoa-quote
+
+## Key Features
+
+✓ **Local & Responsive** - Northern Colorado owned and operated with same-day support
+✓ **Eco-Friendly** - Sustainable waste management practices and comprehensive recycling
+✓ **Transparent Pricing** - No hidden fees or surprise charges
+✓ **Flexible Scheduling** - Custom pickup schedules to fit your needs
+✓ **Professional Service** - Clean, uniform containers and reliable pickups
+
+## Online Tools
+
+- **Dumpster Size Calculator**: https://www.dumpsterdiverz.com/size-calculator
+  - Help customers choose the right dumpster size for their project
+  
+- **Pay Bill Online**: https://www.dumpsterdiverz.com/pay-my-bill
+  - Convenient online payment portal
+
+- **Help Center**: https://www.dumpsterdiverz.com/help
+  - FAQ and support articles
+
+## Company Pages
+
+- About Us: https://www.dumpsterdiverz.com/about
+- Contact: https://www.dumpsterdiverz.com/contact
+- Services Overview: https://www.dumpsterdiverz.com/services
+
+## Legal
+
+- Terms of Service: https://www.dumpsterdiverz.com/terms-of-service
+- Privacy Policy: https://www.dumpsterdiverz.com/privacy-policy
+
+## Technical Information
+
+**Website Built With:**
+- Next.js 15 with App Router
+- React 18+
+- TypeScript
+- Tailwind CSS
+- Supabase (PostgreSQL database)
+- Radix UI components
+
+**Last Updated:** November 19, 2025
+
+---
+
+For immediate service or questions, call 970-888-7274 or visit https://www.dumpsterdiverz.com

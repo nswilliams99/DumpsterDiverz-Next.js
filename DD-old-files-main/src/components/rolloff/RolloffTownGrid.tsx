@@ -42,7 +42,7 @@ const RolloffTownGrid = () => {
             {towns.map((town) => (
               <Link
                 key={town.slug}
-                to={`/roll-off-dumpsters/${town.slug}`}
+                href={`/roll-off-dumpsters/${town.slug}`}
                 className="rounded-xl p-4 text-center transition-all duration-200 shadow-lg hover:shadow-xl group font-inter font-semibold bg-white text-professional-dark border border-white hover:bg-primary hover:text-white hover:border-primary focus-visible:ring-4 focus-visible:ring-primary/20 focus-visible:ring-offset-2 focus-visible:outline-none"
                 aria-label={`View roll-off dumpster service in ${town.name}`}
               >

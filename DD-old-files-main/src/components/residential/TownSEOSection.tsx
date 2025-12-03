@@ -65,7 +65,7 @@ const TownSEOSection = ({ town, customTitle, customContent }: TownSEOSectionProp
                 {relatedTowns.map(relatedTown => (
                   <Link
                     key={relatedTown.slug}
-                    to={`/residential/${relatedTown.slug}`}
+                    href={`/residential/${relatedTown.slug}`}
                     className="inline-flex items-center px-3 py-1 text-sm bg-professional-lighter text-professional-dark hover:bg-primary hover:text-white rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-2 focus-visible:outline-none"
                     aria-label={`View residential trash service in ${relatedTown.name}`}
                   >

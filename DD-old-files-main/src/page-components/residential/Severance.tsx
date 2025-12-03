@@ -1,3 +1,4 @@
+'use client';
 
 import ResidentialTownPage from '@/components/residential/ResidentialTownPage';
 

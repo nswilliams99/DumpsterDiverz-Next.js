@@ -144,98 +144,96 @@ const TerryShoresAssociation = () => {
                   </div>
                 </div>
 
-                {/* Seasonal Grass Pickup Section - Styled like LawnPickupSection */}
-                <div className="bg-white rounded-2xl shadow-lg border border-light-neutral overflow-hidden">
-                  {/* Header with Price Callout */}
-                  <div className="bg-gradient-to-r from-diverz-pink to-diverz-purple p-6 text-white">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Leaf className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="ml-4">
-                          <h3 className="text-2xl font-bold font-poppins">
-                            Seasonal Grass Pickup
-                          </h3>
-                          <p className="text-white/90 font-inter text-sm">
-                            May through November
-                          </p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-3xl font-bold font-poppins">
-                          $20<span className="text-lg font-normal">/month</span>
-                        </div>
+                {/* Seasonal Grass Pickup Section - Matching Bi-Weekly Recycling styling */}
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-light-neutral">
+                  <div className="flex items-center mb-6">
+                    <div className="flex-shrink-0 w-14 h-14 bg-diverz-pink/20 rounded-full flex items-center justify-center">
+                      <Leaf className="w-7 h-7 text-diverz-pink" />
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-2xl font-bold text-professional-dark font-poppins">
+                        Seasonal Grass Pickup
+                      </h3>
+                      <div className="inline-flex items-center bg-diverz-pink/10 text-diverz-pink font-semibold px-3 py-1 rounded-full text-sm mt-1">
+                        <Leaf className="w-4 h-4 mr-1" />
+                        Optional Add-On Service
                       </div>
                     </div>
                   </div>
 
-                  {/* Features */}
-                  <div className="p-8">
-                    <div className="space-y-4 mb-6">
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                          <Trash2 className="w-5 h-5 text-diverz-pink" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                            Dedicated 64-Gallon Can
-                          </h4>
-                          <p className="text-professional-dark font-inter">
-                            One dedicated can for lawn clippings and grass
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                          <Calendar className="w-5 h-5 text-diverz-pink" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                            Weekly Pickup
-                          </h4>
-                          <p className="text-professional-dark font-inter">
-                            Weekly collection during growing season
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
-                          <DollarSign className="w-5 h-5 text-diverz-pink" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-lg text-professional-dark font-poppins">
-                            Simple Monthly Billing
-                          </h4>
-                          <p className="text-professional-dark font-inter">
-                            Easy billing through TrashJoes - no contracts
-                          </p>
-                        </div>
-                      </div>
+                  {/* Pricing Callout */}
+                  <div className="bg-gradient-to-r from-diverz-pink to-diverz-purple rounded-xl p-4 mb-6 text-white text-center">
+                    <div className="text-3xl font-bold font-poppins">
+                      $20<span className="text-lg font-normal">/month</span>
                     </div>
-
-                    <Button
-                      asChild
-                      size="lg"
-                      className="w-full bg-diverz-pink hover:bg-diverz-pink-dark text-white font-semibold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-12"
-                    >
-                      <a 
-                        href="https://app.trashjoes.com/h/dumpster-diverz"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Order lawn pickup service online through TrashJoes"
-                      >
-                        <Leaf className="w-5 h-5 mr-2" />
-                        Add Lawn Pickup to Your Service
-                      </a>
-                    </Button>
-
-                    <p className="text-xs text-professional-dark/60 font-inter mt-3 text-center">
-                      Secure billing through TrashJoes integration
+                    <p className="text-white/90 font-inter text-sm">
+                      May through November
                     </p>
                   </div>
+                  
+                  <div className="space-y-4 mb-6">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
+                        <Trash2 className="w-5 h-5 text-diverz-pink" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
+                          Dedicated 64-Gallon Can
+                        </h4>
+                        <p className="text-professional-dark font-inter">
+                          One dedicated can for lawn clippings and grass
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
+                        <Calendar className="w-5 h-5 text-diverz-pink" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
+                          Weekly Pickup
+                        </h4>
+                        <p className="text-professional-dark font-inter">
+                          Weekly collection during growing season
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-diverz-pink/20 rounded-full flex items-center justify-center">
+                        <DollarSign className="w-5 h-5 text-diverz-pink" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg text-professional-dark font-poppins">
+                          Simple Monthly Billing
+                        </h4>
+                        <p className="text-professional-dark font-inter">
+                          Easy billing through TrashJoes - no contracts
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full bg-diverz-pink hover:bg-diverz-pink-dark text-white font-semibold font-inter transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-12"
+                  >
+                    <a 
+                      href="https://app.trashjoes.com/h/dumpster-diverz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Order lawn pickup service online through TrashJoes"
+                    >
+                      <Leaf className="w-5 h-5 mr-2" />
+                      Add Lawn Pickup to Your Service
+                    </a>
+                  </Button>
+
+                  <p className="text-xs text-professional-dark/60 font-inter mt-3 text-center">
+                    Secure billing through TrashJoes integration
+                  </p>
                 </div>
               </div>
             </div>

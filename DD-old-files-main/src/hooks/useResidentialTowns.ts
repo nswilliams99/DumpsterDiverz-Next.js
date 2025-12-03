@@ -28,7 +28,7 @@ export const useResidentialTowns = () => {
     retry: 0,
     staleTime: 5 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
-    placeholderData: staticResidentialTowns as unknown as ResidentialTown[],
+    initialData: staticResidentialTowns as unknown as ResidentialTown[],
   });
 };
 
@@ -57,7 +57,7 @@ export const useResidentialTownBySlug = (slug: string) => {
     retry: 0,
     staleTime: 5 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
-    placeholderData: staticTown as unknown as ResidentialTown | null,
+    initialData: staticTown as unknown as ResidentialTown | null,
   });
 };
 

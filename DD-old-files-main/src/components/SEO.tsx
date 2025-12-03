@@ -1,4 +1,6 @@
+'use client';
 
+import { useState, useEffect } from 'react';
 import { Helmet } from '@/components/seo/HelmetStub';
 import EnhancedLocalBusiness from './seo/EnhancedLocalBusiness';
 import TechnicalSEO from './seo/TechnicalSEO';
@@ -51,39 +53,43 @@ const SEO = ({
   const finalOgDescription = ogDescription || finalDescription;
   const finalOgImage = ogImage || defaultImage;
 
-  // Ensure canonical URL is properly formatted - force HTTPS and www, strip UTM params, normalize trailing slashes
-  const getCanonicalUrl = () => {
-    if (canonical) {
-      // Normalize provided canonical to ensure www prefix and no trailing slash
-      let normalizedCanonical = canonical;
-      if (canonical.includes('dumpsterdiverz.com') && !canonical.includes('www.')) {
-        normalizedCanonical = canonical.replace('https://dumpsterdiverz.com', 'https://www.dumpsterdiverz.com');
-      }
-      // Remove trailing slash to prevent duplicates
-      return normalizedCanonical.replace(/\/$/, '');
+  // Helper to normalize canonical URL
+  const normalizeCanonical = (url: string) => {
+    let normalized = url;
+    if (url.includes('dumpsterdiverz.com') && !url.includes('www.')) {
+      normalized = url.replace('https://dumpsterdiverz.com', 'https://www.dumpsterdiverz.com');
     }
-    
-    // On server-side, return default canonical since window is not available
-    if (typeof window === 'undefined') {
-      return 'https://www.dumpsterdiverz.com';
-    }
-    
-    // Generate canonical from current location, stripping UTM parameters and trailing slashes
-    const url = new URL(window.location.href);
-    // Remove UTM and other tracking parameters
-    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'].forEach(param => {
-      url.searchParams.delete(param);
-    });
-    
-    // Force www and https, remove trailing slash
-    const pathname = url.pathname.replace(/\/$/, '');
-    return `https://www.dumpsterdiverz.com${pathname}${url.search}`;
+    return normalized.replace(/\/$/, '');
   };
-  
-  const finalCanonical = getCanonicalUrl();
-  
-  // Check if on commercial page (only on client-side)
-  const isCommercialPage = typeof window !== 'undefined' && window.location.pathname.includes('/commercial/');
+
+  // Compute initial canonical from prop or default
+  const getInitialCanonical = () => {
+    if (canonical) {
+      return normalizeCanonical(canonical);
+    }
+    return 'https://www.dumpsterdiverz.com';
+  };
+
+  // Use state for client-side canonical computation to avoid hydration mismatch
+  const [finalCanonical, setFinalCanonical] = useState(getInitialCanonical);
+  const [isCommercialPage, setIsCommercialPage] = useState(false);
+
+  useEffect(() => {
+    // Update canonical from current URL if not explicitly provided
+    if (!canonical && typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'].forEach(param => {
+        url.searchParams.delete(param);
+      });
+      const pathname = url.pathname.replace(/\/$/, '');
+      setFinalCanonical(`https://www.dumpsterdiverz.com${pathname}${url.search}`);
+    }
+    
+    // Update commercial page check
+    if (typeof window !== 'undefined') {
+      setIsCommercialPage(window.location.pathname.includes('/commercial/'));
+    }
+  }, [canonical]);
 
   return (
     <>

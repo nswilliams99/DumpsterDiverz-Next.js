@@ -134,19 +134,19 @@ export default function RootLayout({
             <Analytics />
           </TooltipProvider>
         </QueryProvider>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-C0E6YGLW9W"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-C0E6YGLW9W');
-          `}
-        </Script>
       </body>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-C0E6YGLW9W"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-C0E6YGLW9W');
+        `}
+      </Script>
     </html>
   );
 }

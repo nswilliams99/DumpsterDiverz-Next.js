@@ -1,3 +1,5 @@
+'use client';
+
 import { usePageSection } from '@/hooks/usePageSections';
 
 const AboutServices = () => {

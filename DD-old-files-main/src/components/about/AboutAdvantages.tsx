@@ -1,3 +1,4 @@
+'use client';
 
 import { MapPin, Shield, User, Leaf, ChevronDown } from 'lucide-react';
 import { useState } from 'react';

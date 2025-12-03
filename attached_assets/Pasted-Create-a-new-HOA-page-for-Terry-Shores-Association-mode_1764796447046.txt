@@ -1,0 +1,37 @@
+Create a new HOA page for Terry Shores Association, modeled exactly after the Eagle Lake Association page.
+
+**PART 1: Add Navigation Buttons to HOA Services Page**
+
+On the HOA Services page, there should already be a button that leads to the Eagle Lake HOA page. Add a second button next to it so there are 2 buttons laid out horizontally:
+- Button 1: "Eagle Lake Association HOA" → links to /hoa/eagle-lake-association
+- Button 2: "Terry Shores Association HOA" → links to /hoa/terry-shores-association
+
+**PART 2: Create these 2 new files:**
+
+1. `src/app/hoa/terry-shores-association/page.tsx` - Route file with metadata
+2. `src/page-components/hoa/TerryShoresAssociation.tsx` - Page component
+
+**Key differences from Eagle Lake:**
+
+1. **Pickup Day:** Monday (not Thursday) - update the pickup schedule notice accordingly ("Monday Pickup Schedule - Please place carts out the night before for Monday morning pickup")
+
+2. **Add a new section near the top** (after hero, before signup form) for Terry Shores specific services:
+   - **Bi-Weekly Recycling Included** - Recycling pickup every other week at no extra charge
+   - **Seasonal Grass Pickup** - $20/month, available May 1 through November 1
+
+3. **Friendly welcome line in the hero:** Something like "Dumpster Diverz is proud to serve the Terry Shores community"
+
+4. **Update all references:**
+   - "Eagle Lake Association" → "Terry Shores Association"
+   - "Eagle Lake HOA" → "Terry Shores HOA"
+   - "Eagle Lake property" → "Terry Shores property"
+   - Canonical URL: `https://www.dumpsterdiverz.com/hoa/terry-shores-association`
+
+5. **Keep everything else the same:**
+   - Same roll-off pricing (12yd $325, 15yd $375, 20yd $450, 30yd $550)
+   - Same signup form structure (create TerryShoresSignupForm component if needed, or reuse pattern from EagleLakeSignupForm)
+   - Same quote form
+   - Same "About" section structure
+   - Same contact CTA with phone 970-888-7274
+
+**DO NOT modify any existing Eagle Lake files. Only create the new Terry Shores files and update the HOA Services navigation.**

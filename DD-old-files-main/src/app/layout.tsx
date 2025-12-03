@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Poppins } from 'next/font/google';
-import Script from 'next/script';
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -122,6 +121,20 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="dns-prefetch" href="//elfsightcdn.com" />
         
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-C0E6YGLW9W"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-C0E6YGLW9W');
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
         <QueryProvider>
@@ -135,18 +148,6 @@ export default function RootLayout({
           </TooltipProvider>
         </QueryProvider>
       </body>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-C0E6YGLW9W"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-C0E6YGLW9W');
-        `}
-      </Script>
     </html>
   );
 }

@@ -1,3 +1,4 @@
+'use client';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -65,11 +66,6 @@ const ResidentialTownPage = ({ slug }: ResidentialTownPageProps) => {
   // Ensure canonical URL matches the exact route pattern and strips trailing slashes
   const canonicalUrl = `https://www.dumpsterdiverz.com/residential/${town.slug}`;
   
-  // Force canonical to match current location to avoid duplicates
-  const currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash
-  const expectedPath = `/residential/${town.slug}`;
-  const finalCanonical = currentPath === expectedPath ? canonicalUrl : canonicalUrl;
-  
   // Generate breadcrumb structured data
   const breadcrumbItems = [
     { name: "Home", url: "https://www.dumpsterdiverz.com" },
@@ -136,7 +132,7 @@ const ResidentialTownPage = ({ slug }: ResidentialTownPageProps) => {
             created_at: '',
             updated_at: ''
           }}
-          heroImageUrl={town.hero_image_url}
+          heroImageUrl={town.hero_image_url ?? undefined}
         />
 
         {/* SEO Section */}
@@ -165,7 +161,7 @@ const ResidentialTownPage = ({ slug }: ResidentialTownPageProps) => {
         {/* Pricing Section */}
         <ResidentialPricing 
           townName={town.name} 
-          pricingInfo={town.pricing_info}
+          pricingInfo={town.pricing_info ?? undefined}
         />
 
         {/* HOA Services Section */}

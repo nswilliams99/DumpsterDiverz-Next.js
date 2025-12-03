@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   compress: true,
   reactStrictMode: true,
   trailingSlash: false,
-  allowedDevOrigins: ['*.replit.dev', '*.picard.replit.dev'],
+  allowedDevOrigins: ['*.replit.dev', '*.picard.replit.dev', '*.kirk.replit.dev', '*.janeway.replit.dev', '*.spock.replit.dev'],
   
   images: {
     remotePatterns: [

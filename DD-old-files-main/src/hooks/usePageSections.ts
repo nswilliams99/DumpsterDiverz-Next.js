@@ -19,19 +19,24 @@ export const usePageSections = (pageSlug: string, sectionName?: string) => {
   return useQuery({
     queryKey: ['page-sections', pageSlug, sectionName],
     queryFn: async () => {
-      let query = supabase
-        .from('page_sections')
-        .select('*')
-        .eq('page_slug', pageSlug);
-      
-      if (sectionName) {
-        query = query.eq('section_name', sectionName);
+      try {
+        let query = supabase
+          .from('page_sections')
+          .select('*')
+          .eq('page_slug', pageSlug);
+        
+        if (sectionName) {
+          query = query.eq('section_name', sectionName);
+        }
+        
+        const { data, error } = await query.order('display_order', { ascending: true });
+        
+        if (error) throw error;
+        if (data && data.length > 0) return data as PageSection[];
+      } catch (e) {
+        console.log('Page sections not available, using defaults');
       }
-      
-      const { data, error } = await query.order('display_order', { ascending: true });
-      
-      if (error) throw error;
-      return data as PageSection[];
+      return [] as PageSection[];
     },
   });
 };

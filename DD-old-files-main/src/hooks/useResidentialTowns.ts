@@ -1,7 +1,7 @@
-
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import type { Tables, TablesInsert, TablesUpdate } from '@/integrations/supabase/types';
+import { staticResidentialTowns, getResidentialTownBySlug as getStaticTown, type ResidentialTown as StaticResidentialTown } from '@/data/residentialTownsData';
 
 type ResidentialTown = Tables<'residential_towns'>;
 type ResidentialTownInsert = TablesInsert<'residential_towns'>;
@@ -11,14 +11,19 @@ export const useResidentialTowns = () => {
   return useQuery({
     queryKey: ['residential-towns'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('residential_towns')
-        .select('*')
-        .eq('is_active', true)
-        .order('name');
-      
-      if (error) throw error;
-      return data as ResidentialTown[];
+      try {
+        const { data, error } = await supabase
+          .from('residential_towns')
+          .select('*')
+          .eq('is_active', true)
+          .order('name');
+        
+        if (error) throw error;
+        if (data && data.length > 0) return data as ResidentialTown[];
+      } catch (e) {
+        console.log('Using static residential towns data');
+      }
+      return staticResidentialTowns as unknown as ResidentialTown[];
     },
   });
 };
@@ -27,15 +32,20 @@ export const useResidentialTownBySlug = (slug: string) => {
   return useQuery({
     queryKey: ['residential-town', slug],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('residential_towns')
-        .select('*')
-        .eq('slug', slug)
-        .eq('is_active', true)
-        .maybeSingle();
-      
-      if (error) throw error;
-      return data as ResidentialTown | null;
+      try {
+        const { data, error } = await supabase
+          .from('residential_towns')
+          .select('*')
+          .eq('slug', slug)
+          .eq('is_active', true)
+          .maybeSingle();
+        
+        if (error) throw error;
+        if (data) return data as ResidentialTown | null;
+      } catch (e) {
+        console.log('Using static residential town data for:', slug);
+      }
+      return getStaticTown(slug) as unknown as ResidentialTown | null;
     },
     enabled: !!slug,
   });

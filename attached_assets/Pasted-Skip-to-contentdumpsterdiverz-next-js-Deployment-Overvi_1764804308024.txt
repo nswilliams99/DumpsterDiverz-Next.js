@@ -1,0 +1,128 @@
+Skip to contentdumpsterdiverz.next.js – Deployment Overview – Vercel
+Trash Joes Inc
+Trash Joes Inc
+
+Pro
+
+dumpsterdiverz.next.js
+
+Hx27GqxxX
+
+
+Find…
+F
+
+Deployment Details
+Build Failed
+Command "npm run build" exited with 1
+
+Created
+nate-8530 Avatar
+nate-8530
+46s ago
+Status
+Error
+Latest
+Duration
+34s
+Just now
+Environment
+Production
+Domains
+dumpsterdiverznextjs-git-main-trash-joes-inc.vercel.app
+dumpsterdiverznext-4t6slonjg-trash-joes-inc.vercel.app
+Source
+main
+c47d540
+Add README.md file
+
+Deployment Settings
+Fluid Compute
+Deployment Protection
+Skew Protection
+Cold Start Prevention
+Build Logs
+34s
+43 lines
+Find in logs
+CtrlF
+17:24:29.840 
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+17:24:29.840 
+This information is used to shape Next.js' roadmap and prioritize features.
+17:24:29.840 
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+17:24:29.840 
+https://nextjs.org/telemetry
+17:24:29.840 
+17:24:29.921 
+   ▲ Next.js 15.5.6
+17:24:29.921 
+17:24:29.953 
+   Creating an optimized production build ...
+17:24:43.130 
+ ✓ Compiled successfully in 10.9s
+17:24:43.132 
+   Linting and checking validity of types ...
+17:24:51.870 
+Failed to compile.
+17:24:51.870 
+17:24:51.870 
+./src/app/help/[slug]/page.tsx:10:36
+17:24:51.870 
+Type error: Type '{ slug: string; }' is not assignable to type 'IntrinsicAttributes'.
+17:24:51.870 
+  Property 'slug' does not exist on type 'IntrinsicAttributes'.
+17:24:51.870 
+17:24:51.870 
+   8 | export default function HelpArticle() {
+17:24:51.870 
+   9 |   const params = useParams();
+17:24:51.870 
+> 10 |   return <KnowledgeBaseArticlePage slug={params.slug as string} />;
+17:24:51.870 
+     |                                    ^
+17:24:51.870 
+  11 | }
+17:24:51.871 
+  12 |
+17:24:51.904 
+Next.js build worker exited with code: 1 and signal: null
+17:24:51.924 
+Error: Command "npm run build" exited with 1
+Deployment Summary
+Deployment Checks
+Assigning Custom Domains
+Runtime Logs
+
+View and debug runtime logs & errors
+
+Observability
+
+Monitor app health & performance
+
+Speed Insights
+
+Not Enabled
+Performance metrics from real users
+
+Web Analytics
+
+Not Enabled
+Analyze visitors & traffic in real-time
+
+Home
+Docs
+Guides
+Academy
+Help
+Contact
+All systems normal.
+
+Select a display theme:
+
+system
+
+light
+
+dark

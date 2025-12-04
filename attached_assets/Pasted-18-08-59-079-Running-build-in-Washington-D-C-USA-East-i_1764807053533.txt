@@ -1,0 +1,46 @@
+18:08:59.079 Running build in Washington, D.C., USA (East) – iad1 (Turbo Build Machine)
+18:08:59.080 Build machine configuration: 30 cores, 60 GB
+18:08:59.161 Cloning github.com/nswilliams99/DumpsterDiverz-Next.js (Branch: main, Commit: 222f7f1)
+18:08:59.162 Previous build caches not available.
+18:09:01.281 Cloning completed: 2.120s
+18:09:01.561 Running "vercel build"
+18:09:01.903 Vercel CLI 48.12.0
+18:09:02.205 Installing dependencies...
+18:09:10.688 
+18:09:10.688 added 339 packages in 8s
+18:09:10.688 
+18:09:10.688 52 packages are looking for funding
+18:09:10.688   run `npm fund` for details
+18:09:10.735 Detected Next.js version: 15.5.6
+18:09:10.738 Running "npm run build"
+18:09:10.831 
+18:09:10.831 > dumpster-diverz-nextjs@0.1.0 build
+18:09:10.831 > next build
+18:09:10.832 
+18:09:11.496 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+18:09:11.496 This information is used to shape Next.js' roadmap and prioritize features.
+18:09:11.497 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+18:09:11.497 https://nextjs.org/telemetry
+18:09:11.497 
+18:09:11.568    ▲ Next.js 15.5.6
+18:09:11.568 
+18:09:11.603    Creating an optimized production build ...
+18:09:24.851  ✓ Compiled successfully in 11.0s
+18:09:24.852    Linting and checking validity of types ...
+18:09:33.452    Collecting page data ...
+18:09:35.430    Generating static pages (0/34) ...
+18:09:35.878  ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/residential". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+18:09:35.878     at g (/vercel/path0/DD-old-files-main/.next/server/chunks/7049.js:1:141514)
+18:09:35.878     at m (/vercel/path0/DD-old-files-main/.next/server/chunks/7049.js:10:24590)
+18:09:35.879     at s (/vercel/path0/DD-old-files-main/.next/server/chunks/6586.js:1:8946)
+18:09:35.879     at n3 (/vercel/path0/DD-old-files-main/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:82831)
+18:09:35.879     at n6 (/vercel/path0/DD-old-files-main/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:84601)
+18:09:35.879     at n5 (/vercel/path0/DD-old-files-main/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:104801)
+18:09:35.879     at n7 (/vercel/path0/DD-old-files-main/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:102219)
+18:09:35.879     at ia (/vercel/path0/DD-old-files-main/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:108211)
+18:09:35.879     at ie (/vercel/path0/DD-old-files-main/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:106833)
+18:09:35.879     at n5 (/vercel/path0/DD-old-files-main/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:105079)
+18:09:35.879 Error occurred prerendering page "/residential". Read more: https://nextjs.org/docs/messages/prerender-error
+18:09:35.879 Export encountered an error on /residential/page: /residential, exiting the build.
+18:09:35.883  ⨯ Next.js build worker exited with code: 1 and signal: null
+18:09:35.935 Error: Command "npm run build" exited with 1

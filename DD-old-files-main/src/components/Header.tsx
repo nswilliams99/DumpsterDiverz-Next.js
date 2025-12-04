@@ -1,15 +1,12 @@
 "use client";
 
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import TopBar from './header/TopBar';
 import MainNavigation from './header/MainNavigation';
 import MobileMenu from './header/MobileMenu';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showAdminMode, setShowAdminMode] = useState(false);
+const AdminModeHandler = ({ onAdminModeChange }: { onAdminModeChange: (isAdmin: boolean) => void }) => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -17,14 +14,21 @@ const Header = () => {
     const storedAdminMode = typeof window !== 'undefined' ? localStorage.getItem('adminMode') : null;
     
     if (adminParam === 'true') {
-      setShowAdminMode(true);
+      onAdminModeChange(true);
       if (typeof window !== 'undefined') {
         localStorage.setItem('adminMode', 'true');
       }
     } else if (storedAdminMode === 'true') {
-      setShowAdminMode(true);
+      onAdminModeChange(true);
     }
-  }, [searchParams]);
+  }, [searchParams, onAdminModeChange]);
+
+  return null;
+};
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAdminMode, setShowAdminMode] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,6 +40,9 @@ const Header = () => {
 
   return (
     <header className="bg-background shadow-sm relative z-50" role="banner">
+      <Suspense fallback={null}>
+        <AdminModeHandler onAdminModeChange={setShowAdminMode} />
+      </Suspense>
       <TopBar showAdminMode={showAdminMode} />
       <MainNavigation
         isMenuOpen={isMenuOpen}

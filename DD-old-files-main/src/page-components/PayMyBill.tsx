@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Loader2, MessageSquare, Mail, RefreshCw } from "lucide-react";
+import { Loader2, MessageSquare, Mail, ExternalLink, CreditCard } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -79,8 +79,6 @@ export default function PayMyBillPage() {
   const [isLoadingSMS, setIsLoadingSMS] = useState(false);
   const [isLoadingEmail, setIsLoadingEmail] = useState(false);
   const [isLoadingForm, setIsLoadingForm] = useState(false);
-  const [iframeLoading, setIframeLoading] = useState(true);
-  const [iframeError, setIframeError] = useState(false);
 
   const handleSMSSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -158,11 +156,6 @@ export default function PayMyBillPage() {
     }
   };
 
-  const retryIframe = () => {
-    setIframeError(false);
-    setIframeLoading(true);
-  };
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -221,17 +214,50 @@ export default function PayMyBillPage() {
           </div>
         </section>
 
-        {/* SECTION 2: PAY YOUR BILL ONLINE (IFRAME SECTION) */}
+        {/* SECTION 2: PAY YOUR BILL ONLINE */}
         <section className="py-16 bg-background">
           <div className="container max-w-4xl px-4 mx-auto">
-            <h2 className="text-3xl font-bold text-foreground text-center mb-8 font-poppins">
+            <h2 className="text-3xl font-bold text-foreground text-center mb-6 font-poppins">
               Pay Your Bill Online
             </h2>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6 mb-8">
+            <div className="bg-card border rounded-xl shadow-lg p-8 md:p-12 text-center">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                  <CreditCard className="w-8 h-8 text-primary" />
+                </div>
+              </div>
+              
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 font-poppins">
+                Secure Payment via TrashBilling.com
+              </h3>
+              
+              <p className="text-muted-foreground mb-6 max-w-lg mx-auto font-inter">
+                Click the button below to pay your bill securely. You'll need your <strong>12-digit Customer ID</strong> from your invoice.
+              </p>
+
+              <a
+                href="https://trashbilling.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-primary rounded-lg hover:bg-primary/90 hover:shadow-xl hover:-translate-y-1 transition-all focus-visible:ring-4 focus-visible:ring-primary/20"
+                data-analytics-event="billing-external"
+              >
+                <CreditCard className="w-5 h-5" />
+                Pay My Bill Now
+                <ExternalLink className="w-4 h-4 ml-1" />
+              </a>
+
+              <p className="text-sm text-muted-foreground mt-4">
+                Opens in a new tab
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
               <Button 
                 onClick={() => smoothScrollTo('find-customer-id')}
-                className="bg-primary text-white hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:ring-4 focus-visible:ring-primary/20"
+                variant="outline"
+                className="hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:ring-4 focus-visible:ring-primary/20"
                 aria-label="Scroll to Customer ID form"
               >
                 Find My Customer ID
@@ -245,41 +271,6 @@ export default function PayMyBillPage() {
                 Update My Account Info
               </Button>
             </div>
-
-            <div 
-              className="relative aspect-[16/10] md:aspect-[16/9] max-md:w-full max-md:h-[480px] overflow-hidden mb-6 rounded-lg border shadow-lg"
-              data-analytics-event="billing-external"
-            >
-              {iframeLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-background z-10">
-                  <Loader2 className="w-8 h-8 animate-spin text-primary" />
-                  <span className="ml-2 text-muted-foreground">Loading secure payment portal...</span>
-                </div>
-              )}
-              {iframeError ? (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted z-10">
-                  <p className="text-muted-foreground mb-4">Unable to load payment portal</p>
-                  <Button onClick={retryIframe} className="bg-primary text-white hover:bg-primary/90">
-                    <RefreshCw className="w-4 h-4 mr-2" />
-                    Retry
-                  </Button>
-                </div>
-              ) : (
-                <iframe
-                  title="Secure Dumpster Diverz Bill Payment Portal via TrashBilling.com - Pay your trash bill online with your Customer ID"
-                  src="https://trashbilling.com"
-                  className="w-full h-full border-0"
-                  onLoad={() => setIframeLoading(false)}
-                  onError={() => {
-                    setIframeLoading(false);
-                    setIframeError(true);
-                  }}
-                />
-              )}
-            </div>
-            <p className="md:hidden text-sm text-muted-foreground text-center mb-6">
-              Tip: Use two fingers to scroll inside the box above if needed.
-            </p>
           </div>
         </section>
 

@@ -6,6 +6,18 @@ Dumpster Diverz is a Next.js 15 application providing professional waste managem
 
 ## Recent Changes
 
+**December 4, 2025 - Pay My Bill Page: Iframe to Link-Out Button**
+- Replaced TrashBilling.com iframe with a clean link-out button approach
+- Removed iframe-related state (iframeLoading, iframeError) and retryIframe function
+- New design features:
+  - Card-based layout with credit card icon
+  - "Secure Payment via TrashBilling.com" heading
+  - Prominent "Pay My Bill Now" button with external link icon
+  - Opens TrashBilling.com in new tab with proper rel="noopener noreferrer"
+  - "Opens in a new tab" helper text for accessibility
+- Secondary CTAs (Find My Customer ID, Update Account Info) moved below main payment button
+- More reliable than iframe (no loading/security issues) and better mobile experience
+
 **December 3, 2025 - Residential Town Page Hydration Fix**
 - Fixed critical hydration mismatch causing residential town pages to show loading spinner instead of content
 - Changed React Query hooks from `placeholderData` to `initialData` in useResidentialTowns.ts

@@ -6,20 +6,17 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Phone, Mail, CreditCard, MapPin } from 'lucide-react';
 import Link from 'next/link';
-import { usePageSection } from '@/hooks/usePageSections';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 
 const Hero = () => {
-  const { section, isLoading, error } = usePageSection('homepage', 'hero');
   const [imageError, setImageError] = useState(false);
 
-  // Fallback values (matching Supabase content to prevent flash)
-  const title = section?.title || "Trash Service that Doesn't Suck";
-  const description = section?.description || "Family-owned Dumpster Diverz offers reliable trash pickup & dumpster rentals in Northern Colorado. No contracts, text alerts included.";
+  // Hardcoded canonical content - no Supabase fetch to prevent flash/wrong content
+  const title = "Reliable Dumpster Rental & Trash Services";
+  const description = "Serving Windsor, Fort Collins, Wellington & Timnath with eco-friendly weekly service, no hidden fees, and real customer support.";
+  const heroImage = "https://cgizicrrzdbzvfniffhw.supabase.co/storage/v1/object/public/website_pics/pages/home/homepage_hero.webp";
   const fallbackImage = "https://cgizicrrzdbzvfniffhw.supabase.co/storage/v1/object/public/website_pics/pages/home/homepage_about.webp";
-  const imageSrc = !imageError && section?.image_path ? section.image_path : fallbackImage;
-  const primaryButtonText = section?.button_text || "Order Online";
-  const primaryButtonUrl = section?.button_url || "https://app.trashjoes.com/h/dumpster-diverz";
+  const imageSrc = !imageError ? heroImage : fallbackImage;
 
   return (
     <section className="relative bg-gradient-to-br from-gray-800 via-gray-500 to-gray-300 text-white py-16 lg:py-20 overflow-hidden" aria-label="Hero section">

@@ -13,9 +13,9 @@ const Hero = () => {
   const { section, isLoading, error } = usePageSection('homepage', 'hero');
   const [imageError, setImageError] = useState(false);
 
-  // Fallback values (current hardcoded content)
-  const title = section?.title || "Reliable Dumpster Rental & Trash Services";
-  const description = section?.description || "Serving Windsor, Fort Collins, Wellington & Timnath with eco-friendly weekly service, no hidden fees, and real customer support.";
+  // Fallback values (matching Supabase content to prevent flash)
+  const title = section?.title || "Trash Service that Doesn't Suck";
+  const description = section?.description || "Family-owned Dumpster Diverz offers reliable trash pickup & dumpster rentals in Northern Colorado. No contracts, text alerts included.";
   const fallbackImage = "https://cgizicrrzdbzvfniffhw.supabase.co/storage/v1/object/public/website_pics/pages/home/homepage_about.webp";
   const imageSrc = !imageError && section?.image_path ? section.image_path : fallbackImage;
   const primaryButtonText = section?.button_text || "Order Online";

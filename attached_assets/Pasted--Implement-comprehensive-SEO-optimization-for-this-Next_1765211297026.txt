@@ -1,0 +1,74 @@
+"Implement comprehensive SEO optimization for this Next.js site. Focus on technical SEO, local business optimization, and search engine visibility:
+1. Metadata & Head Tags:
+Add proper metadata exports to every page with unique titles and descriptions
+Implement dynamic Open Graph tags for social sharing
+Add Twitter Card metadata
+Include proper canonical URLs on all pages
+Add language and locale tags
+Implement proper viewport and charset tags
+2. Structured Data (Schema.org JSON-LD):
+Add LocalBusiness schema to homepage with:
+Business name, address, phone (NAP)
+Service areas covered
+Operating hours
+Logo and images
+Reviews/ratings if available
+Add Service schema for each waste management service offered
+Add BreadcrumbList schema for navigation
+Add Organization schema with social profiles
+Implement proper @context and @type for all schemas
+3. Sitemap & Robots:
+Generate dynamic XML sitemap at /sitemap.xml including all pages
+Create robots.txt with proper crawl directives
+Add sitemap reference to robots.txt
+Implement dynamic sitemap generation for any database-driven pages
+4. Performance Optimization:
+Implement all Next.js Image components with proper sizing
+Add blur placeholders to images
+Optimize font loading with next/font
+Implement lazy loading for below-the-fold content
+Minimize JavaScript bundle size
+Add proper caching headers
+5. URL Structure & Redirects:
+Ensure clean, descriptive URLs (no random IDs where possible)
+Implement 301 redirects for any old URLs if applicable
+Add trailing slash consistency
+Implement proper 404 page with helpful navigation
+6. Content Optimization:
+Ensure all pages have proper H1 tags (only one per page)
+Implement proper heading hierarchy (H1 → H2 → H3)
+Add descriptive alt text to all images
+Ensure internal linking structure
+Add descriptive link text (no "click here")
+7. Local SEO Specific:
+Add location-specific keywords to title tags and meta descriptions
+Include city/state in key pages
+Add embedded Google Maps if location-based
+Implement local phone number formats
+Add service area pages if serving multiple locations
+8. Technical SEO:
+Ensure mobile-first responsive design
+Implement proper semantic HTML5 tags
+Add proper rel attributes (nofollow, sponsored, ugc where needed)
+Ensure no duplicate content issues
+Implement hreflang tags if multi-language
+Add proper heading tags for accessibility and SEO
+9. Analytics & Tracking Setup:
+Add Google Analytics 4 implementation
+Add Google Search Console verification meta tag
+Add Google Tag Manager container
+Implement event tracking for key user actions
+Add conversion tracking setup
+10. Page Speed & Core Web Vitals:
+Optimize Largest Contentful Paint (LCP)
+Minimize Cumulative Layout Shift (CLS)
+Improve First Input Delay (FID)
+Implement preloading for critical resources
+Add resource hints (dns-prefetch, preconnect)
+11. Content Security:
+Add proper Content Security Policy headers
+Implement HTTPS enforcement
+Add security headers (X-Frame-Options, etc.)
+12. RSS Feed (Optional but helpful):
+Generate RSS feed if there's a blog or news section
+Ensure all implementations follow Next.js 14+ best practices using App Router. Make everything dynamic so if business information changes in environment variables, it updates automatically. Provide clear comments in code showing where to customize business-specific information."

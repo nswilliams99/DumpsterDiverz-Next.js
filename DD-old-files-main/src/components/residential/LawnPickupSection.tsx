@@ -44,7 +44,7 @@ const LawnPickupSection = () => {
                     Seasonal Service
                   </h3>
                   <p className="text-professional-dark font-inter">
-                    Available May 1st through end of October during peak growing season
+                    Available <span className="text-primary font-semibold">May 1st - November 1st</span> during peak growing season
                   </p>
                 </div>
               </div>
@@ -75,8 +75,8 @@ const LawnPickupSection = () => {
                     <div className="text-3xl font-bold text-professional-dark font-poppins">
                       $20<span className="text-lg font-normal">/month</span>
                     </div>
-                    <p className="text-sm text-professional-dark/70 font-inter">
-                      May through October
+                    <p className="text-sm font-inter">
+                      <span className="text-primary font-semibold">May 1st - November 1st</span>
                     </p>
                   </div>
                 </div>

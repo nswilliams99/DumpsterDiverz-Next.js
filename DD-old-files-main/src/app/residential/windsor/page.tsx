@@ -2,15 +2,15 @@ import dynamic from "next/dynamic";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Residential Trash Service Windsor CO | Weekly Pickup & Recycling',
-  description: 'Weekly residential trash pickup and recycling in Windsor, CO. Local family-owned company with competitive rates and reliable service. 96-gal and 64-gal carts. Call 970-888-7274',
-  keywords: ['Windsor trash service', 'Windsor recycling', 'Windsor waste management', 'residential trash Windsor', 'curbside pickup Windsor', 'Windsor trash pickup'],
+  title: 'Trash Service Windsor CO | Weekly Trash Pickup & Garbage Collection',
+  description: 'Windsor CO trash service starting at $29/month. Weekly trash pickup, recycling, and garbage collection for Windsor homes. Local drivers, no contracts. Call 970-888-7274.',
+  keywords: ['trash service windsor co', 'windsor trash pickup', 'windsor trash service', 'windsor garbage collection', 'windsor co trash pickup', 'residential trash windsor', 'windsor waste management', 'dumpster rental windsor co'],
   alternates: {
     canonical: 'https://www.dumpsterdiverz.com/residential/windsor',
   },
   openGraph: {
-    title: 'Residential Trash Service Windsor CO | Weekly Pickup & Recycling | Dumpster Diverz',
-    description: 'Weekly residential trash pickup and recycling in Windsor, CO. Local family-owned company with competitive rates.',
+    title: 'Trash Service Windsor CO | Weekly Trash Pickup & Garbage Collection',
+    description: 'Windsor CO trash service starting at $29/month. Weekly trash pickup and garbage collection for homes. No contracts required.',
     url: 'https://www.dumpsterdiverz.com/residential/windsor',
     siteName: 'Dumpster Diverz',
     locale: 'en_US',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Residential Trash Service Windsor CO | Dumpster Diverz',
-    description: 'Weekly residential trash pickup and recycling in Windsor with local, reliable service.',
+    title: 'Trash Service Windsor CO | Dumpster Diverz',
+    description: 'Windsor CO trash service and garbage collection. Weekly pickup, local drivers, no contracts. Starting at $29/month.',
   },
 };
 

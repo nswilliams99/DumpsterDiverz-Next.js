@@ -2,15 +2,15 @@ import dynamic from "next/dynamic";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Residential Trash Service Fort Collins CO | Weekly Pickup & Recycling',
-  description: 'Weekly residential trash pickup and recycling in Fort Collins, CO. Reliable service, competitive rates, eco-friendly waste management. 96-gal and 64-gal carts available. Call 970-888-7274',
-  keywords: ['Fort Collins trash service', 'Fort Collins recycling', 'Fort Collins waste management', 'residential trash Fort Collins', 'curbside pickup Fort Collins', 'Fort Collins trash pickup'],
+  title: 'Trash Service Fort Collins CO | Weekly Trash Collection & Garbage Pickup',
+  description: 'Fort Collins trash service starting at $29/month. Weekly trash collection, recycling, and garbage pickup for Fort Collins homes. No contracts, local drivers. Call 970-888-7274.',
+  keywords: ['trash service fort collins', 'trash collection fort collins', 'fort collins garbage service', 'fort collins trash pickup', 'fort collins garbage pickup', 'residential trash fort collins', 'fort collins waste management', 'trash service fort collins co'],
   alternates: {
     canonical: 'https://www.dumpsterdiverz.com/residential/fort-collins',
   },
   openGraph: {
-    title: 'Residential Trash Service Fort Collins CO | Weekly Pickup & Recycling | Dumpster Diverz',
-    description: 'Weekly residential trash pickup and recycling in Fort Collins, CO. Reliable service, competitive rates, eco-friendly waste management.',
+    title: 'Trash Service Fort Collins CO | Weekly Trash Collection & Garbage Pickup',
+    description: 'Fort Collins trash service starting at $29/month. Weekly trash collection and garbage pickup for homes. No contracts required.',
     url: 'https://www.dumpsterdiverz.com/residential/fort-collins',
     siteName: 'Dumpster Diverz',
     locale: 'en_US',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Residential Trash Service Fort Collins CO | Dumpster Diverz',
-    description: 'Weekly residential trash pickup and recycling in Fort Collins with reliable, eco-friendly service.',
+    title: 'Trash Service Fort Collins CO | Dumpster Diverz',
+    description: 'Fort Collins trash service and garbage collection. Weekly pickup, local drivers, no contracts. Starting at $29/month.',
   },
 };
 

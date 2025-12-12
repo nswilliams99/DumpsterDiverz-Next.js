@@ -3,15 +3,15 @@ import type { Metadata } from 'next';
 import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Residential Trash Pickup & Recycling Services | Northern Colorado',
-  description: 'Weekly residential trash pickup and recycling in Windsor, Fort Collins, Wellington, Greeley, and Severance. 96-gal and 64-gal carts available. Eco-friendly service. Call 970-888-7274',
-  keywords: ['residential trash pickup', 'curbside recycling', 'Northern Colorado', 'Windsor trash service', 'Fort Collins waste', 'weekly trash collection', 'home trash service', 'eco-friendly recycling'],
+  title: 'Residential Trash Pickup & Waste Collection | Northern Colorado',
+  description: 'Weekly residential trash pickup, garbage collection, and curbside waste services in Windsor, Fort Collins, Wellington, Greeley, and Severance. 96-gal and 64-gal carts available. Call 970-888-7274',
+  keywords: ['residential trash pickup', 'residential garbage pickup', 'residential waste pickup', 'residential trash collection', 'residential waste collection', 'residential garbage collection', 'curbside recycling', 'Northern Colorado', 'Windsor trash service', 'Fort Collins waste', 'weekly trash collection', 'home trash service'],
   alternates: {
     canonical: 'https://www.dumpsterdiverz.com/residential',
   },
   openGraph: {
-    title: 'Residential Trash Pickup & Recycling Services | Northern Colorado | Dumpster Diverz',
-    description: 'Weekly residential trash pickup and recycling in Windsor, Fort Collins, Wellington, Greeley, and Severance. Eco-friendly local service.',
+    title: 'Residential Trash Pickup & Waste Collection | Northern Colorado | Dumpster Diverz',
+    description: 'Weekly residential trash pickup, garbage collection, and curbside waste services in Windsor, Fort Collins, Wellington, Greeley, and Severance.',
     url: 'https://www.dumpsterdiverz.com/residential',
     siteName: 'Dumpster Diverz',
     locale: 'en_US',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Residential Trash Pickup & Recycling Services | Dumpster Diverz',
-    description: 'Weekly residential trash pickup and recycling in Northern Colorado. Eco-friendly local service.',
+    title: 'Residential Trash Pickup & Waste Collection | Dumpster Diverz',
+    description: 'Weekly residential trash pickup, garbage collection, and waste services in Northern Colorado.',
   },
 };
 
